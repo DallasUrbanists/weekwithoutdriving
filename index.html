@@ -1,15 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week Without Driving, Dallas</title>
+    <title>Sign up for the Week Without Driving Challenge: September 29 - October 5, 2025</title>
+<link rel="stylesheet" href="reset.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+    <style>
+        body {
+            font-family: "Cormorant Garamond", serif;
+            font-optical-sizing: auto;
+            background-color: #3a3a3a;
+        }
+        :root {
+            font-size: 20px;
+        }
+        .row {
+            justify-content: stretch;
+            height: 100svh;
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+            margin: 0;
+
+            .col {
+                flex-basis: 50%;
+                flex-grow: 1;
+            }
+        }
+
+        #form-iframe {
+            margin: 0;
+            height: calc(100svh - 0.5rem);
+            padding: 0;
+            border: none;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        h1 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 900;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .info {
+            padding: 2rem;
+            box-sizing: border-box;
+            overflow-y: auto;
+            background-color: #f0f0f0;
+            scrollbar-color: #ff5200 #f0f0f0;
+            max-width: 640px;
+
+            p {
+                max-width: 40rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .nobr {
+            white-space: nowrap;
+        }
+        @media (max-width: 640px) {
+            .row {
+                display: block;
+
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Week Without Driving, Dallas</h1>
-    <p>Week Without Driving 2025 will take place Monday, September 29th, through Sunday, October 5th.</p>
-    <p>Sign up to get updates from the America Walks team and stay connected to the Week Without Driving community.</p>
-    <p>Whether you’re taking participating for the first time or you’re a long-time advocate, share your journey using the hashtag #WeekWithoutDriving and tag us @AmericaWalks so we can celebrate your voice.</p>
-    <p>We’re here to support you and make this week a meaningful and impactful experience. Thank you for participating and helping create more inclusive and accessible communities!</p>
+
+    <div class="row">
+        <div class="col info">
+            <h1>
+                <img src="https://weekwithoutdriving.org/wp-content/uploads/2024/02/WWD_orange-black-lockup-stacked-2-300x207.png"
+                    alt="Week Without Driving" style="width: 100%; max-width: 300px; height: auto;">
+                 Monday, <span class="nobr">September 29</span> – Sunday, <span class="nobr">October 5</span>, 2025
+            </h1>
+
+            <p>Approximately one-third of people in the United States cannot drive due to age, ability, income, and
+                other factors. Every community includes people who don’t drive.</p>
+
+            <p>Week Without Driving invites everyone to experience, reflect, and share what life is like without
+                driving. It’s an opportunity to tell your story and help reimagine what transportation options could
+                look like in your community. See more about the national campaign: <a href="https://weekwithoutdriving.org">weekwithoutdriving.org</a></p>
+
+        </div>
+        <div class="col">
+            <iframe id="form-iframe"
+                src="https://docs.google.com/forms/d/e/1FAIpQLScpVikGNIW-1BbyPV4Ozj1JUOBiAvPWAtF721SppkFrMNr5NQ/viewform?embedded=true"
+                width="640" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+    </div>
 </body>
+
 </html>
