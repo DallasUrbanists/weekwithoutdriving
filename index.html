@@ -139,7 +139,6 @@
                 infoFrames.forEach(frame => {
                     frame.onload = () => {
                         frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
-                        frame.style.width = frame.contentWindow.document.body.scrollWidth + 'px';
                     };
                 })
                 navLinks.forEach(link => {
