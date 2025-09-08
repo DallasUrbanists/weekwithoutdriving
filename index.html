@@ -119,6 +119,24 @@
                 background-color: #0f6466;
             }
         }
+
+        .placeholder {
+            font-weight: normal;
+            font-style: italic;
+            opacity: 0.5;
+            animation: blink-animation 0.5s steps(2, start) infinite;
+            -webkit-animation: blink-animation 0.5s steps(2, start) infinite;
+        }
+        @keyframes blink-animation {
+            to {
+            visibility: hidden;
+            }
+        }
+        @-webkit-keyframes blink-animation {
+            to {
+            visibility: hidden;
+            }
+        }
     </style>
 </head>
 
@@ -139,6 +157,8 @@
                 residents and policymakers to experience these challenges firsthand and reflect on what a truly
                 inclusive, multi-modal transportation system could look like in North Texas.
             </p>
+
+            <h1>Total sign-ups: <span id="signup-counter"><span class="placeholder">(counting, please wait)</span></span></h1>
 
             <a id="signup-button" href="#signup-form">Sign up for the challenge!</a>
 
@@ -187,6 +207,16 @@
                 width="640" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
     </div>
+    <script>
+        async function updateCount() {
+            const res = await fetch("https://script.google.com/macros/s/AKfycbxZenbWU4ZeE1Bsx5-hdd3Z1-Qtt4VJ57zmc3T1JJetT_hM1K7qM-j_o1_CEo3jMvt9/exec");
+            const count = await res.text();
+            console.log(`Total submissions: ${count}`);
+            document.querySelector('#signup-counter').innerHTML= count;
+        }
+        updateCount();
+        setInterval(updateCount, 30000); // refresh every minute
+    </script>
 </body>
 
 </html>
