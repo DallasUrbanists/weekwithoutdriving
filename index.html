@@ -163,6 +163,7 @@
                 infoFrames.forEach(frame => {
                     frame.onload = () => {
                         frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
+                        console.log('resized ' + frame.id + ' to ' + frame.style.height);
                     };
                 })
                 navLinks.forEach(link => {
