@@ -1,0 +1,13 @@
+        body {
+            font-family: "Cormorant Garamond", serif;
+            font-optical-sizing: auto;
+        }
+        :root {
+            font-size: 20px;
+        }
+a {
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 2px;
+    color: #0f6466;
+    text-decoration: underline;
+}

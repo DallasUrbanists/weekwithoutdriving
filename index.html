@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up for the Week Without Driving Challenge: September 29 - October 5, 2025</title>
-<link rel="stylesheet" href="reset.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <style>
         body {
-            font-family: "Cormorant Garamond", serif;
-            font-optical-sizing: auto;
             background-color: #3a3a3a;
         }
-        :root {
-            font-size: 20px;
-        }
+
         .row {
             justify-content: stretch;
             height: 100svh;
@@ -44,7 +43,7 @@
         h1 {
             font-family: 'Raleway', sans-serif;
             font-weight: 900;
-            font-size: 1.75rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
         }
 
@@ -65,10 +64,34 @@
         .nobr {
             white-space: nowrap;
         }
+
         @media (max-width: 640px) {
             .row {
                 display: block;
 
+            }
+        }
+        .info-iframe {
+            border: none;
+            border-top: solid 2px hsla(180, 73%, 23%, 1);
+            display: none;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 1rem;
+            font-weight: 600;
+
+            li {
+                cursor: pointer;
+                color: #0f6466;
+                padding: 0rem 0.3rem;
+            }
+            li.active {
+                color: white;
+                background-color: #0f6466;
             }
         }
     </style>
@@ -80,17 +103,61 @@
         <div class="col info">
             <h1>
                 <img src="https://weekwithoutdriving.org/wp-content/uploads/2024/02/WWD_orange-black-lockup-stacked-2-300x207.png"
-                    alt="Week Without Driving" style="width: 100%; max-width: 300px; height: auto;">
-                 Monday, <span class="nobr">September 29</span> – Sunday, <span class="nobr">October 5</span>, 2025
+                    alt="Week Without Driving" style="width: 100%; max-width: 300px; height: auto; margin-bottom: 1rem;">
+                Monday, <span class="nobr">September 29</span> – Sunday, <span class="nobr">October 5</span>, 2025
             </h1>
+            <p>
+                In a city built around cars, it can be nearly impossible - or even dangerous - to travel without one. For the one-third of people in the U.S. who can’t drive due to age, income, ability, or other circumstances, every trip is a challenge. Week Without Driving offers a powerful opportunity for residents and policymakers to experience these challenges firsthand and reflect on what a truly inclusive, multi-modal transportation system could look like in North Texas.
+            </p>
 
-            <p>Approximately one-third of people in the United States cannot drive due to age, ability, income, and
-                other factors. Every community includes people who don’t drive.</p>
+            <nav>
+                <ul>
+                    <li class="active" data-target="links">Links &amp; Resources</li>
+                    <li data-target="partners">Partner Orgs</li>
+                    <li data-target="events">Events</li>
+                </ul>
+            </nav>
 
-            <p>Week Without Driving invites everyone to experience, reflect, and share what life is like without
-                driving. It’s an opportunity to tell your story and help reimagine what transportation options could
-                look like in your community. See more about the national campaign: <a href="https://weekwithoutdriving.org">weekwithoutdriving.org</a></p>
-
+            <iframe
+                id="links"
+                class="info-iframe"
+                src="./links.html"
+                style="width: calc(100% + 4rem); height: 1024px; margin: 0 -2rem; overflow-y: hidden; display: block;"
+            ></iframe>
+            <iframe
+                id="partners"
+                class="info-iframe"
+                src="./partners.html"
+                style="width: calc(100% + 4rem); height: 1024px; margin: 0 -2rem; overflow-y: hidden;"
+            ></iframe>
+            <iframe
+                id="events"
+                class="info-iframe"
+                src="./events.html"
+                style="width: calc(100% + 4rem); height: 1024px; margin: 0 -2rem; overflow-y: hidden;"
+            ></iframe>
+            <script>
+                var infoFrames = document.querySelectorAll('.info-iframe');
+                var navLinks = document.querySelectorAll('nav ul li');
+                infoFrames.forEach(frame => {
+                    frame.onload = () => {
+                        frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
+                        frame.style.width = frame.contentWindow.document.body.scrollWidth + 'px';
+                    };
+                })
+                navLinks.forEach(link => {
+                    link.onclick = () => {
+                        document.querySelector('nav ul li.active').classList.remove('active');
+                        link.classList.add('active');
+                        infoFrames.forEach(frame => {
+                            frame.style.display = 'none';
+                        });
+                        var target = document.getElementById(link.dataset.target);
+                        target.style.display = 'block';
+                        target.onload();
+                    }
+                });
+            </script>
         </div>
         <div class="col">
             <iframe id="form-iframe"

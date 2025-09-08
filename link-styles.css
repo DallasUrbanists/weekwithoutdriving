@@ -1,0 +1,62 @@
+@import url('reset.css');
+@import url('styles.css');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    background-image: linear-gradient(to bottom, hsla(180, 73%, 23%, 0.1), transparent 25%);
+}
+
+.link {
+    /*border-top: solid 1px hsla(180, 73%, 23%, 0.5);
+    background-image: linear-gradient(to bottom, hsla(180, 73%, 23%, 0.1), transparent 25%);*/
+    padding: 1rem 2rem;
+
+    .combo {
+        display: flex;
+        flex-direction: row;
+
+        >* {
+            flex-grow: 1;
+        }
+
+        >p {
+            flex-basis: 75%;
+            font-size: 0.95rem;
+            line-height: 1.2em;
+        }
+
+        >.logo {
+            width: 25%;
+            flex-basis: 25%;
+            margin-left: 1rem;
+
+            img {
+                width: 100%;
+                max-height: 24rem;
+                max-width: 24rem;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+.link>a {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    text-decoration: none;
+    text-wrap: pretty;
+    display: block;
+}
+
+.link>a+p {
+    margin-top: 0;
+    font-size: 0.95rem;
+    line-height: 1.2em;
+}
+
+.nobr {
+    white-space: nowrap;
+}
