@@ -65,10 +65,24 @@
             white-space: nowrap;
         }
 
+        #signup-button {
+            text-align: center;
+            display: none;
+            background-color: #0f6466;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
         @media (max-width: 640px) {
             .row {
                 display: block;
-
+            }
+            #signup-button {
+                display: block;
             }
         }
 
@@ -90,6 +104,7 @@
                 cursor: pointer;
                 color: #0f6466;
                 padding: 0rem 0.3rem;
+                font-size: 0.9rem;
             }
 
             li.active {
@@ -118,9 +133,11 @@
                 inclusive, multi-modal transportation system could look like in North Texas.
             </p>
 
+            <a id="signup-button" href="#signup-form">Sign up for the challenge!</a>
+
             <nav>
                 <ul>
-                    <li class="active" data-target="links">Links &amp; Resources</li>
+                    <li class="active" data-target="links">Links</li>
                     <li data-target="partners">Partner Orgs</li>
                     <li data-target="events">Events</li>
                 </ul>
@@ -156,6 +173,7 @@
             </script>
         </div>
         <div class="col">
+            <a id="signup-form"></a>
             <iframe id="form-iframe"
                 src="https://docs.google.com/forms/d/e/1FAIpQLScpVikGNIW-1BbyPV4Ozj1JUOBiAvPWAtF721SppkFrMNr5NQ/viewform?embedded=true"
                 width="640" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
